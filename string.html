@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+ <h1>JavaScript String and Math Functions</h1>
+ <h2>String Functions</h2>
+ <p>1. String Length: The length of "Hello World" is <span id="len"></span></p>
+ <p>2. toUpperCase: "hello" in uppercase is <span id="upper"></span></p>
+ <p>3. includes: Does "Hello World" include "World"? <span id="inc"></span></p>
+ <p>4. charAt: The character at index 4 in "Hello" is <span id="char"></span></p>
+ <p>5. slice: Slicing "Hello World" from index 0 to 5 gives <span id="slice"></span></p>
+ <h2>Math Functions</h2>
+ <p>1. Math.round: The result of Math.round(4.6) is <span id="round"></span></p>
+<p>2. Math.random: A random number between 0 and 1: <span id="rand"></span></p>
+ <p>3. Math.sqrt: The square root of 25 is <span id="sqrt"></span></p>
+<p>4. Math.max: The maximum number of (10, 20, 5, 40) is <span id="max"></span></p>
+ <p>5. Math.min: The minimum number of (10, 20, 5, 40) is <span id="min"></span></p>
+ <script>
+      
+
+        document.getElementById('len').innerText = "Hello World".length;
+        document.getElementById('upper').innerText = "hello".toUpperCase();
+        document.getElementById('inc').innerText = "Hello World".includes("World");
+        document.getElementById('char').innerText = "Hello".charAt(4);
+        document.getElementById('slice').innerText = "Hello World".slice(0, 5);
+
+
+        document.getElementById('round').innerText = Math.round(4.6);
+        document.getElementById('rand').innerText = Math.random();
+        document.getElementById('sqrt').innerText = Math.sqrt(25);
+        document.getElementById('max').innerText = Math.max(10, 20, 5, 40);
+        document.getElementById('min').innerText = Math.min(10, 20, 5, 40);
+    </script>
+ </body>
+</html>
