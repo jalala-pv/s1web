@@ -1,0 +1,82 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateForm()">
+First Name:<br>
+        <input type="text" id="firstname"><br><br>
+ Last Name:<br>
+        <input type="text" id="lastname"><br><br>
+ Username:<br>
+        <input type="text" id="username"><br><br>
+Password:<br>
+        <input type="password" id="password"><br><br>
+ Confirm Password:<br>
+        <input type="password" id="confirmPassword"><br><br>
+ Gender:<br>
+        <input type="radio" id="male" name="gender" value="Male"> Male<br>
+        <input type="radio" id="female" name="gender" value="Female"> Female<br><br>
+ Mobile:<br>
+        <input type="text" id="mobile"><br><br>
+Address:<br>
+        <textarea id="address"></textarea><br><br>
+ Email:<br>
+        <input type="email" id="email"><br><br>
+ <button type="submit">Register</button>
+    </form>
+ <script>
+        function validateForm() {
+            const firstname = document.getElementById("firstname").value.trim();
+            const lastname = document.getElementById("lastname").value.trim();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const confirmPassword = document.getElementById("confirmPassword").value.trim();
+            const maleRadio = document.getElementById("male").checked;
+            const femaleRadio = document.getElementById("female").checked;
+            const mobile = document.getElementById("mobile").value.trim();
+            const address = document.getElementById("address").value.trim();
+            const email = document.getElementById("email").value.trim();
+ if (
+                !firstname || 
+                !lastname || 
+                !username || 
+                !password || 
+                !confirmPassword || 
+                (!maleRadio && !femaleRadio) || 
+                !mobile || 
+                !address || 
+                !email
+            ) {
+                alert("All fields are required!");
+                return false;
+            }
+ 
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters!");
+                return false;
+            }
+ 
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+ 
+            if (mobile.length !== 10 || isNaN(mobile)) {
+                alert("Enter a valid 10-digit mobile number!");
+                return false;
+            }
+ 
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Enter a valid email!");
+                return false;
+            }
+ alert("Registration Successful!");
+            return true;
+        }
+    </script>
+</body>
+</html>
